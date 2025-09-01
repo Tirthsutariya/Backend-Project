@@ -5,9 +5,10 @@ dotenv.config({
     path:'./.env'
 });
 
-import express from "express";
 import connectDB from "./db/index.js";
+import app from "./app.js";
 
+// connectDB and server start
 connectDB()
 .then(() => {
     app.listen(process.env.PORT, () => {
@@ -17,3 +18,4 @@ connectDB()
 .catch((error) => {
     console.error("Database connection failed:", error);
 });
+
